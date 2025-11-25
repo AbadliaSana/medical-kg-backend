@@ -1,0 +1,38 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# --- Virtual environment ---
+venv/
+ENV/
+env/
+*.env
+*.venv
+.kgbackend-venv/
+.kgbackend-env/
+Scripts/
+
+# --- Django ---
+db.sqlite3
+/static/
+media/
+*.log
+
+# --- Neo4j dumps ---
+*.dump
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+
+# --- JWT / Security ---
+*.pem
+*.key
+*.crt
