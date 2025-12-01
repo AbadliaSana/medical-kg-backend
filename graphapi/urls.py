@@ -37,5 +37,7 @@ urlpatterns = [
 
     # Search
     path("search/", views.search_view, name="search"),
+    path("query/", views.query_view, name="query"),
 
+    
 ]

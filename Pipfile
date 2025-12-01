@@ -8,8 +8,10 @@ django = "*"
 djangorestframework = "*"
 py2neo = "*"
 neo4j = "*"
-python-dotenv = "*"
 djangorestframework-simplejwt = "*"
+openai = "*"
+python-dotenv = "*"
+groq = "*"
 
 [dev-packages]
 

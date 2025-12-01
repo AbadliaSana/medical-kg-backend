@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.urls import reverse
+from graphapi.services.query_engine import process_query
 
 from graphapi.services.graph_write import (
     create_patient,
@@ -76,7 +77,7 @@ def api_root(request):
 
         # Utilitaire
         "search": _full(request, "search"),
-        
+        "query": _full(request, "query"),
         
     })
 
@@ -270,5 +271,12 @@ def search_view(request):
     term = request.GET.get("term", "")
     return Response(search_graph(term))
 
+@api_view(["POST"])
+def query_view(request):
+    question = request.data.get("question")
 
+    if not question:
+        return Response({"error": "Missing field 'question'"}, status=400)
 
+    result = process_query(question)
+    return Response(result)
